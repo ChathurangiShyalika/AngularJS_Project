@@ -10,17 +10,17 @@ import { DataService } from '../data.service';
 })
 export class AboutComponent implements OnInit {
 
-goals:any;
+  skills: any;
 
-  constructor(private route:ActivatedRoute,private router:Router,private _data:DataService) { 
-    this.route.params.subscribe(res => console.log(res.id) );
+  constructor(private route: ActivatedRoute, private router: Router, private _data: DataService) {
+    this.route.params.subscribe(res => console.log(res.id));
   }
 
   ngOnInit() {
-  this._data.goal.subscribe(res => this.goals = res);
+    this._data.skill.subscribe(res => this.skills = res);
   }
 
-  sendMeHome(){
+  sendMeHome() {
     this.router.navigate([''])
   }
 }

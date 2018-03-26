@@ -1,26 +1,40 @@
+<div class="col">
+    <p class="sm">Add your name </p>
+    <form>
+        <div class="col">
+            <input type="text" class="txt" name="item" placeholder="Your name" [(ngModel)]="nameText">
+        </div>
+        <br>
+        <span>Welcome {{nameText}}! </span>
+        <div class="col">
+            <input type="submit" class="btn" [value]=" namebtnText " (click)="addName()">
+        </div>
+    </form>
+</div>
+
 <div class="container color-dark">
     <div class="col">
-    <p>Add a life goal</p> 
+        <p>Add your skills</p>
     </div>
-    
+
     <div class="col">
-        <p>Your Life Goals ({{itemCount}})</p> 
+        <p>Your skills ({{itemCount}})</p>
     </div>
 </div>
 
-
-<div class="container color-light" [@goals]="goals.length">
+<div class="container color-light" [@skills]="skills.length">
     <div class="col">
-    <p class = "sm">Please use this form</p> 
-      <form>
-        <input type = "text" class="txt" name = "item" placeholder = "Life goal"[(ngModel)]="goalText">
-        <br><span>{{goalText}}</span>
-        <input type = "submit" class="btn" [value] = " btnText " (click)="addItem()">
-      </form>
+        <p class="sm">Use this form to add skills </p>
+        <form>
+            <input type="text" class="txt" name="item" placeholder="Your skills" [(ngModel)]="skillText">
+            <br>
+            <span>{{skillText}}</span>
+            <input type="submit" class="btn" [value]=" btnText " (click)="addItem()">
+        </form>
     </div>
-    
+
     <div class="col">
-        <p class="life-container" *ngFor="let goal of goals;let i = index"(click)="removeitem(i)" >
-           {{ goal }} </p> 
+        <p class="life-container" *ngFor="let skill of skills;let i = index" (click)="removeitem(i)">
+            {{ skill }} </p>
     </div>
 </div>
